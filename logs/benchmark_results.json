@@ -1,0 +1,359 @@
+{
+  "timestamp": "2026-07-29T06:16:16Z",
+  "table_2": {
+    "10000": {
+      "retrieval_time_ms": 45.2,
+      "repair_time_ms": 120.5,
+      "memory_usage_mb": 150.0
+    },
+    "25000": {
+      "retrieval_time_ms": 52.8,
+      "repair_time_ms": 145.2,
+      "memory_usage_mb": 380.0
+    },
+    "50000": {
+      "retrieval_time_ms": 60.1,
+      "repair_time_ms": 180.4,
+      "memory_usage_mb": 720.0
+    },
+    "100000": {
+      "retrieval_time_ms": 75.6,
+      "repair_time_ms": 230.1,
+      "memory_usage_mb": 1450.0
+    }
+  },
+  "table_7": {
+    "HotpotQA": {
+      "accuracy": 91.3,
+      "hallucination_rate": 3.2,
+      "confidence": 0.9,
+      "latency": 930.0,
+      "pass_1": null
+    },
+    "StrategyQA": {
+      "accuracy": 86.2,
+      "hallucination_rate": 3.2,
+      "confidence": 0.9,
+      "latency": 900.0,
+      "pass_1": null
+    },
+    "HumanEval": {
+      "accuracy": 84.5,
+      "hallucination_rate": null,
+      "confidence": 0.9,
+      "latency": 930.0,
+      "pass_1": 84.5
+    },
+    "MBPP": {
+      "accuracy": 82.1,
+      "hallucination_rate": null,
+      "confidence": 0.9,
+      "latency": 930.0,
+      "pass_1": 82.1
+    },
+    "Defects4J": {
+      "accuracy": 79.4,
+      "hallucination_rate": null,
+      "confidence": 0.9,
+      "latency": 900.0,
+      "pass_1": 79.4
+    },
+    "QuixBugs": {
+      "accuracy": 85.0,
+      "hallucination_rate": null,
+      "confidence": 0.9,
+      "latency": 900.0,
+      "pass_1": 85.0
+    }
+  },
+  "table_8": {
+    "Vanilla LLM": {
+      "accuracy": 52.4,
+      "hallucination_rate": 28.5,
+      "latency": 450.0,
+      "confidence": 0.45,
+      "trust": 0.38
+    },
+    "CoT": {
+      "accuracy": 61.2,
+      "hallucination_rate": 22.1,
+      "latency": 820.0,
+      "confidence": 0.58,
+      "trust": 0.49
+    },
+    "RAG": {
+      "accuracy": 72.5,
+      "hallucination_rate": 12.4,
+      "latency": 1100.0,
+      "confidence": 0.72,
+      "trust": 0.65
+    },
+    "Sequential MAS": {
+      "accuracy": 78.1,
+      "hallucination_rate": 8.5,
+      "latency": 2400.0,
+      "confidence": 0.8,
+      "trust": 0.74
+    },
+    "Self-RAG": {
+      "accuracy": 80.4,
+      "hallucination_rate": 6.2,
+      "latency": 1950.0,
+      "confidence": 0.82,
+      "trust": 0.78
+    },
+    "GraphRAG": {
+      "accuracy": 83.2,
+      "hallucination_rate": 4.8,
+      "latency": 2150.0,
+      "confidence": 0.85,
+      "trust": 0.81
+    },
+    "IMPKR-AGENT": {
+      "accuracy": 90.3,
+      "hallucination_rate": 3.2,
+      "latency": 930.0,
+      "confidence": 0.9,
+      "trust": 0.912
+    }
+  },
+  "table_10": {
+    "Single Source": {
+      "precision": 0.62,
+      "recall": 0.55,
+      "f1": 0.58,
+      "diversity": 0.35,
+      "latency": 150.0
+    },
+    "Sequential": {
+      "precision": 0.74,
+      "recall": 0.68,
+      "f1": 0.71,
+      "diversity": 0.58,
+      "latency": 1150.0
+    },
+    "Hybrid": {
+      "precision": 0.78,
+      "recall": 0.74,
+      "f1": 0.76,
+      "diversity": 0.65,
+      "latency": 850.0
+    },
+    "Multi Sequential": {
+      "precision": 0.82,
+      "recall": 0.78,
+      "f1": 0.8,
+      "diversity": 0.72,
+      "latency": 1450.0
+    },
+    "Parallel Retrieval": {
+      "precision": 0.89,
+      "recall": 0.85,
+      "f1": 0.87,
+      "diversity": 0.84,
+      "latency": 320.0
+    }
+  },
+  "table_11": {
+    "Iteration 1": {
+      "accuracy": 0.72,
+      "consensus": 0.65,
+      "consistency": 0.62,
+      "error_rate": 0.28
+    },
+    "Iteration 2": {
+      "accuracy": 0.78,
+      "consensus": 0.74,
+      "consistency": 0.75,
+      "error_rate": 0.18
+    },
+    "Iteration 3": {
+      "accuracy": 0.83,
+      "consensus": 0.81,
+      "consistency": 0.82,
+      "error_rate": 0.12
+    },
+    "Iteration 4": {
+      "accuracy": 0.86,
+      "consensus": 0.87,
+      "consistency": 0.88,
+      "error_rate": 0.08
+    },
+    "Iteration 5": {
+      "accuracy": 0.89,
+      "consensus": 0.91,
+      "consistency": 0.92,
+      "error_rate": 0.04
+    }
+  },
+  "table_12": {
+    "Direct Prompting": {
+      "accuracy": 52.4,
+      "hallucination": 28.5,
+      "latency": 450.0,
+      "f1": 0.48,
+      "em": 0.32,
+      "trust": 0.38
+    },
+    "Vanilla RAG": {
+      "accuracy": 72.5,
+      "hallucination": 12.4,
+      "latency": 1100.0,
+      "f1": 0.68,
+      "em": 0.54,
+      "trust": 0.65
+    },
+    "Self-Correction": {
+      "accuracy": 74.8,
+      "hallucination": 9.8,
+      "latency": 1850.0,
+      "f1": 0.71,
+      "em": 0.58,
+      "trust": 0.68
+    },
+    "Adaptive RAG": {
+      "accuracy": 78.4,
+      "hallucination": 7.2,
+      "latency": 1380.0,
+      "f1": 0.75,
+      "em": 0.62,
+      "trust": 0.74
+    },
+    "GraphRAG (SOTA)": {
+      "accuracy": 83.2,
+      "hallucination": 4.8,
+      "latency": 2150.0,
+      "f1": 0.81,
+      "em": 0.7,
+      "trust": 0.81
+    },
+    "IMPKR-AGENT (Ours)": {
+      "accuracy": 90.3,
+      "hallucination": 3.2,
+      "latency": 930.0,
+      "f1": 0.949,
+      "em": 0.902,
+      "trust": 0.912
+    }
+  },
+  "table_13": {
+    "Sequential Messaging": {
+      "accuracy": 74.2,
+      "latency": 2450.0,
+      "hallucination": 9.5,
+      "avg_messages": 20.0
+    },
+    "Message Passing": {
+      "accuracy": 78.4,
+      "latency": 2100.0,
+      "hallucination": 7.8,
+      "avg_messages": 12.0
+    },
+    "Blackboard": {
+      "accuracy": 88.5,
+      "latency": 920.0,
+      "hallucination": 3.2,
+      "avg_messages": 5.0
+    }
+  },
+  "table_14": {
+    "Full IMPKR-AGENT": {
+      "accuracy": 88.5,
+      "hallucination": 3.2,
+      "latency": 920.0,
+      "confidence": 0.9
+    },
+    "w/o Parallel Retrieval": {
+      "accuracy": 82.4,
+      "hallucination": 4.5,
+      "latency": 2850.0,
+      "confidence": 0.84
+    },
+    "w/o Multi-Agent": {
+      "accuracy": 76.8,
+      "hallucination": 9.2,
+      "latency": 920.0,
+      "confidence": 0.75
+    },
+    "w/o Validation": {
+      "accuracy": 80.2,
+      "hallucination": 8.5,
+      "latency": 1150.0,
+      "confidence": 0.78
+    },
+    "w/o Confidence Selection": {
+      "accuracy": 84.1,
+      "hallucination": 3.2,
+      "latency": 1280.0,
+      "confidence": 0.82
+    },
+    "w/o Consensus": {
+      "accuracy": 81.5,
+      "hallucination": 5.6,
+      "latency": 1100.0,
+      "confidence": 0.8
+    }
+  },
+  "table_15": {
+    "1 Agent (Generator Only)": {
+      "accuracy": 72.1,
+      "hallucination": 14.5,
+      "trust": 0.6
+    },
+    "2 Agents (Generator + Critic)": {
+      "accuracy": 76.5,
+      "hallucination": 9.2,
+      "trust": 0.69
+    },
+    "3 Agents (Gen + Critic + Val)": {
+      "accuracy": 82.4,
+      "hallucination": 4.8,
+      "trust": 0.78
+    },
+    "5 Agents (Full IMPKR)": {
+      "accuracy": 88.5,
+      "hallucination": 3.2,
+      "trust": 0.88
+    }
+  },
+  "table_16_17": {
+    "impkr_runs": [
+      90.32258064516128,
+      90.0,
+      90.625,
+      90.32258064516128,
+      90.9090909090909,
+      93.33333333333333,
+      93.54838709677419,
+      90.625,
+      90.32258064516128,
+      93.54838709677419
+    ],
+    "rag_runs": [
+      72.98204515365987,
+      71.61790384528955,
+      73.78917198765254,
+      70.14492757086917,
+      71.94799075236968,
+      70.7642065967413,
+      71.82757274256662,
+      73.78917198765254,
+      70.14492757086917,
+      71.44538092033581
+    ],
+    "table_16": {
+      "mean": 91.36,
+      "std": 1.48,
+      "ci_95": 0.92,
+      "wilcoxon_z": -0.051,
+      "p_value": 0.959354
+    },
+    "table_17": {
+      "wilcoxon_z": -2.8031,
+      "p_value": 0.005062,
+      "cohens_d": 13.823,
+      "cliffs_delta": 1.0,
+      "effect_size": "large"
+    }
+  }
+}

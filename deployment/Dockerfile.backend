@@ -1,0 +1,28 @@
+# =====================================================================
+# Dockerfile for IMPKR-AGENT Python Backend
+# =====================================================================
+FROM python:3.10-slim
+
+WORKDIR /workspace
+
+# Install system dependencies (build-essential needed for FAISS if compiled, but faiss-cpu has pre-built wheels)
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy requirements and install python packages
+COPY backend/requirements.txt requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy source folders
+COPY backend/ /workspace/backend/
+COPY shared/ /workspace/shared/
+
+# Expose FastAPI port
+EXPOSE 8000
+
+# Set Python Path to include workspace root so 'backend' and 'shared' imports function
+ENV PYTHONPATH=/workspace
+
+# Start server
+CMD ["uvicorn", "backend.app.main:app", "--host", "0.0.0.0", "--port", "8000"]

@@ -1,0 +1,89 @@
+# =====================================================================
+# Docker Compose orchestration for IMPKR-AGENT complete system
+# =====================================================================
+version: '3.8'
+
+services:
+  # 1. Relational Database (PostgreSQL)
+  postgres:
+    image: postgres:15-alpine
+    container_name: impkr_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: impkr_agent
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - impkr_network
+
+  # 2. Knowledge Graph Database (Neo4j)
+  neo4j:
+    image: neo4j:5.12-community
+    container_name: impkr_neo4j
+    restart: always
+    ports:
+      - "7474:7474" # HTTP Browser dashboard
+      - "7687:7687" # Bolt connection port
+    environment:
+      - NEO4J_AUTH=neo4j/password
+    volumes:
+      - neo4j_data:/data
+      - neo4j_logs:/logs
+    networks:
+      - impkr_network
+
+  # 3. Cache & Session Store (Redis)
+  redis:
+    image: redis:7-alpine
+    container_name: impkr_redis
+    restart: always
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - impkr_network
+
+  # 4. FastAPI Backend Application
+  backend:
+    build:
+      context: ../
+      dockerfile: deployment/Dockerfile.backend
+    container_name: impkr_backend
+    restart: always
+    ports:
+      - "8000:8000"
+    environment:
+      - PORT=8000
+      - HOST=0.0.0.0
+      - POSTGRES_URL=postgresql://postgres:postgres@postgres:5432/impkr_agent
+      - NEO4J_URI=bolt://neo4j:7687
+      - NEO4J_USER=neo4j
+      - NEO4J_PASSWORD=password
+      - REDIS_URL=redis://redis:6379/0
+      - USE_MOCK_DATABASES=false   # Set to false to use actual Postgres/Neo4j containers
+      - USE_MOCK_LLM=true          # Set to false and supply key below to use real LLMs
+      - GEMINI_API_KEY=
+      - OPENAI_API_KEY=
+    depends_on:
+      - postgres
+      - neo4j
+      - redis
+    networks:
+      - impkr_network
+
+
+
+volumes:
+  postgres_data:
+  neo4j_data:
+  neo4j_logs:
+  redis_data:
+
+networks:
+  impkr_network:
+    driver: bridge
